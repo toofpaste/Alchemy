@@ -15,7 +15,7 @@ const style = {
 }
 const Dustbin = () => {
   const [{ canDrop, isOver }, drop] = useDrop({
-    accept: 'box',
+    accept: ['box', 'element'],
     drop: () => ({ name: 'Dustbin' }),
     collect: monitor => ({
       isOver: monitor.isOver(),

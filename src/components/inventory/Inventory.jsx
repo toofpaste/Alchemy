@@ -10,6 +10,7 @@ import grape from '../assets/grapes.png';
 import water from '../assets/water.png';
 import animalEye from '../assets/animalEye.png';
 import Box from '../Box';
+import Item from './Item';
 
 
 const useStyles = makeStyles(theme => ({
@@ -66,9 +67,12 @@ export default function Inventory() {
       <Box name='Poop'/>
       <div className={classes.inlineEle}>
         {invent.map((item, index) => (
-          <Paper key={index}>
-            {item.quantity} x <img onDragStart={handleOnDragStart} src={item.name}></img>
-          </Paper>          
+          <Item key={index}
+          element={item}
+          />
+          // <Paper key={index}>
+          //   {item.quantity} x <img onDragStart={handleOnDragStart} src={item.name}></img>
+          // </Paper>
         ))}
       </div>
       <Order></Order>

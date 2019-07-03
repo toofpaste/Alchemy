@@ -11,12 +11,14 @@ const style = {
   cursor: 'move',
   float: 'left',
 }
+
 const Box = ({ name }) => {
   const [{ isDragging }, drag] = useDrag({
     item: { name, type: 'box' },
     end: dropResult => {
       if (dropResult) {
-        alert(`You dropped ${name} into ${dropResult.name}!`)
+          console.log(dropResult);
+        // alert(`You dropped ${name} into ${dropResult.name}!`)
       }
     },
     collect: monitor => ({
